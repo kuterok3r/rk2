@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(RK2)
+project(rk2)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -33,6 +33,7 @@ set(HEADERS
 target_include_directories(${PROJECT_NAME} PUBLIC ${HEADERS})
 
 include(CPack.cmake)
+include(CPackConfig.cmake)
 set(CPACK_SOURCE_INSTALLED_DIRECTORIES "${CMAKE_SOURCE_DIR}")
 
 if(BUILD_TESTS)
