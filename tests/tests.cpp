@@ -22,6 +22,6 @@ TEST(House, secondTest){
 TEST(HouseMock, thirdTest){
     Visitor *visitor;
     HouseMock House(5, 6, 7);
-    EXPECT_CALL(House, accept()).Times(1);
+    EXPECT_CALL(House, accept(visitor)).Times(1);
     House.accept(visitor);
 }
