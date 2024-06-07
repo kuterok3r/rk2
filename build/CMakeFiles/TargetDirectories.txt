@@ -1,0 +1,5 @@
+/home/kali/helpingduede/rk2/build/CMakeFiles/rk2.dir
+/home/kali/helpingduede/rk2/build/CMakeFiles/package.dir
+/home/kali/helpingduede/rk2/build/CMakeFiles/package_source.dir
+/home/kali/helpingduede/rk2/build/CMakeFiles/edit_cache.dir
+/home/kali/helpingduede/rk2/build/CMakeFiles/rebuild_cache.dir
