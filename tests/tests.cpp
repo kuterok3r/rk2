@@ -17,12 +17,11 @@ TEST(HouseMock, firstTest){
 }
 TEST(House, secondTest){
     House House(1, 2, 54);
-    EXPECT_CALL(House, getStairs()).Times(1);
     EXPECT_EQ(House.getStairs(), 1);
 }
-TEST(House, thirdTest){
+TEST(HouseMock, thirdTest){
     Visitor *visitor;
-    House House(5, 6, 7);
+    HouseMock House(5, 6, 7);
     EXPECT_CALL(House, accept()).Times(1);
     House.accept(visitor);
 }
