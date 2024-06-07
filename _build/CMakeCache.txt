@@ -215,6 +215,9 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//No help, variable specified on the command line.
+CPACK_GENERATOR:UNINITIALIZED=TGZ
+
 //Value Computed by CMake
 RK2_BINARY_DIR:STATIC=/home/kali/helpingduede/rk2/_build
 

@@ -1,0 +1,11 @@
+Architecture: all
+Description: static C++ library for printing
+ it's solving
+Maintainer: slv00@vk.com
+Package: libprint-dev
+Pre-Depends: cmake >= 3.0
+Priority: optional
+Section: devel
+Version: 0.1.1-1
+Installed-Size: 4
+
