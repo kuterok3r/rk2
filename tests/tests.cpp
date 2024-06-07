@@ -7,7 +7,7 @@ class HouseMock : public House{
     public:
     HouseMock(int stairs, int lat, int longitude): House(stairs, lat, longitude){}
     MOCK_CONST_METHOD0(getStairs, int());
-    MOCK_METHOD1(accept, void(Visitor));
+    MOCK_METHOD1(accept, void(Visitor*));
 };
 
 TEST(HouseMock, firstTest){
