@@ -1,53 +1,25 @@
-cmake_minimum_required(VERSION 3.10)
+include(InstallRequiredSystemLibraries)
 
-project(rk2)
+set(CPACK_PACKAGE_CONTACT eisnersandy2@gmail.com)
+set(CPACK_PACKAGE_VERSION ${PRINT_VERSION})
+set(CPACK_PACKAGE_NAME "code")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "C++ library")
+set(CPACK_PACKAGE_PACK_NAME "code-${PRINT_VERSION}")
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CPACK_SOURCE_INSTALLED_DIRECTORIES 
+  "${CMAKE_SOURCE_DIR}/code; code")
 
+set(CPACK_RESOURCE_FILE_README ${CMAKE_CURRENT_SOURCE_DIR}/README.md)
 
-set(SOURCES
-    code/main.cpp
-    code/city.cpp
-    code/house.cpp
-    code/industry.cpp
-    code/xmlvisitor.cpp
-)
+set(CPACK_SOURCE_GENERATOR "TGZ;ZIP")
 
-# Добавление исполняемого файла
-add_executable(${PROJECT_NAME} ${SOURCES})
+set(CPACK_DEBIAN_PACKAGE_PREDEPENDS "cmake >= 3.0")
+set(CPACK_DEBIAN_PACKAGE_RELEASE 1)
 
-# Добавление пути к заголовочным файлам
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+set(CPACK_DEBIAN_PACKAGE_VERSION ${PRINT_VERSION})
+set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "all")
+set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "it's solving")
 
-# Добавление заголовочных файлов
-set(HEADERS
-    code/city.h
-    code/house.h
-    code/industry.h
-    code/place.h
-    code/visitor.h
-    code/xmlvisitor.h
-)
+set(CPACK_GENERATOR "DEB;RPM")
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${HEADERS})
-
-include(CPack.cmake)
-set(CPACK_SOURCE_INSTALLED_DIRECTORIES "${CMAKE_SOURCE_DIR}")
-
-if(BUILD_TESTS)
-  add_compile_options(--coverage)
-endif()
-
-
-target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-
-
-if(BUILD_TESTS)
-  enable_testing()
-  add_subdirectory(third-party/gtest)
-  file(GLOB CODE_TEST_SOURCES tests/*.cpp)
-  add_executable(check ${CODE_TEST_SOURCES})
-  target_link_libraries(check gtest_main gmock_main)
-  add_test(NAME check COMMAND check)
-endif()
+set(CPACK_RPM_PACKAGE_SUMMARY "solves equations")
